@@ -1,0 +1,56 @@
+.rooms-screen {
+  padding: var(--space-md);
+}
+
+.screen-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-lg);
+}
+
+.screen-header h1 {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.rooms-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.room-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xs);
+}
+
+.room-icon {
+  font-size: 32px;
+}
+
+.room-task-count {
+  color: var(--color-text-tertiary);
+  font-size: var(--font-size-sm);
+}
+
+.room-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.form-input {
+  padding: var(--space-sm);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  min-height: var(--tap-target-min);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-border-focus);
+}

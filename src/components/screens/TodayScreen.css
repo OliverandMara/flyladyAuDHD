@@ -1,0 +1,91 @@
+.screen {
+  padding: var(--space-md);
+}
+
+.screen-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  color: var(--color-text-secondary);
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: var(--space-md);
+  padding: var(--space-xl);
+  min-height: 50vh;
+}
+
+.today-screen {
+  padding: var(--space-md);
+}
+
+.today-header {
+  margin-bottom: var(--space-lg);
+}
+
+.today-date {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-sm);
+}
+
+.today-command {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+}
+
+.today-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: calc(var(--space-lg) + 60px);
+}
+
+.task-card {
+  cursor: pointer;
+}
+
+.task-card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-xs);
+  color: var(--color-text-tertiary);
+  font-size: var(--font-size-sm);
+}
+
+.task-room-icon {
+  font-size: 16px;
+}
+
+.task-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  margin-bottom: var(--space-sm);
+}
+
+.task-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.task-duration {
+  color: var(--color-text-tertiary);
+  font-size: var(--font-size-sm);
+}
+
+.today-action {
+  position: fixed;
+  bottom: calc(var(--bottom-nav-height) + var(--space-md));
+  left: var(--space-md);
+  right: var(--space-md);
+}
