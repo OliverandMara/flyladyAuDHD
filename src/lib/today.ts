@@ -13,7 +13,6 @@ export function generateTodayList(
 ): TodayTask[] {
   const today = new Date();
   const dayOfWeek = today.getDay();
-  const todayISO = getTodayISO();
   
   const eligibleTasks = tasks.filter((task) => {
     if (completedTaskIds.includes(task.id)) {
