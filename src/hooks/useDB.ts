@@ -159,7 +159,7 @@ export function useDailyState() {
     setState(updated);
   }
 
-  async function placeSticker(sticker: any) {
+  async function placeSticker(sticker: PlacedSticker) {
     if (!state) return;
     const db = await getDB();
     const updated = {
@@ -200,7 +200,7 @@ export function useSettings() {
     if (stored) {
       setSettings(stored);
     } else {
-      await db.put('settings', { key: 'main', ...settings } as any);
+      await db.put('settings', { key: 'main', ...settings });
     }
     setLoading(false);
   }
@@ -208,7 +208,7 @@ export function useSettings() {
   async function updateSettings(updates: Partial<Settings>) {
     const db = await getDB();
     const updated = { ...settings, ...updates };
-    await db.put('settings', { key: 'main', ...updated } as any);
+    await db.put('settings', { key: 'main', ...updated });
     setSettings(updated);
   }
 
