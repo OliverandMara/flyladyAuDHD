@@ -40,6 +40,11 @@
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
   color: var(--color-text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.summary-button {
+  margin-top: var(--space-sm);
 }
 
 .today-list {

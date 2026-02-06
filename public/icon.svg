@@ -1,0 +1,29 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="512" height="512" fill="#5F7A8E" rx="64"/>
+
+  <!-- Room icon (house-like shape) -->
+  <g transform="translate(256, 256)">
+    <!-- Outer room -->
+    <rect x="-120" y="-80" width="240" height="160" fill="#FAF8F5" rx="12"/>
+
+    <!-- Inner accent -->
+    <rect x="-100" y="-60" width="200" height="120" fill="#B8935F" rx="8" opacity="0.3"/>
+
+    <!-- Star/sticker decoration -->
+    <g transform="translate(-60, -30)">
+      <path d="M 0,-20 L 6,-6 L 20,0 L 6,6 L 0,20 L -6,6 L -20,0 L -6,-6 Z" fill="#B8935F"/>
+    </g>
+    <g transform="translate(60, -30)">
+      <path d="M 0,-20 L 6,-6 L 20,0 L 6,6 L 0,20 L -6,6 L -20,0 L -6,-6 Z" fill="#B8935F"/>
+    </g>
+    <g transform="translate(0, 30)">
+      <path d="M 0,-20 L 6,-6 L 20,0 L 6,6 L 0,20 L -6,6 L -20,0 L -6,-6 Z" fill="#B8935F"/>
+    </g>
+
+    <!-- Checkmark -->
+    <g transform="translate(0, 60)">
+      <path d="M -30,0 L -10,20 L 30,-20" stroke="#5F7A8E" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </g>
+  </g>
+</svg>

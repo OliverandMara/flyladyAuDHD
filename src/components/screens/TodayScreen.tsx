@@ -7,6 +7,36 @@ import { Button } from '@/components/shared/Button';
 import { Card } from '@/components/shared/Card';
 import './TodayScreen.css';
 
+function generateDailySummary(
+  todayTasks: TodayTask[],
+  completedTaskIds: string[],
+  earnedStickers: number
+): string {
+  const date = new Date().toLocaleDateString('en-US', {
+    weekday: 'long',
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric'
+  });
+
+  const completedCount = todayTasks.filter(t => completedTaskIds.includes(t.id)).length;
+  const totalCount = todayTasks.length;
+  const totalMinutes = todayTasks.reduce((sum, t) => sum + t.estMinutes, 0);
+
+  let summary = `📅 Daily Summary - ${date}\n\n`;
+  summary += `Progress: ${completedCount}/${totalCount} tasks completed\n`;
+  summary += `Total time: ${totalMinutes} minutes\n`;
+  summary += `Stickers earned today: ${earnedStickers} 🌟\n\n`;
+
+  summary += `Tasks:\n`;
+  todayTasks.forEach((task, idx) => {
+    const status = completedTaskIds.includes(task.id) ? '✅' : '⬜';
+    summary += `${idx + 1}. ${status} ${task.room.emoji} ${task.title} (${task.estMinutes}min - ${task.room.name})\n`;
+  });
+
+  return summary;
+}
+
 export function TodayScreen() {
   const navigate = useNavigate();
   const { rooms, loading: roomsLoading } = useRooms();
@@ -14,6 +44,25 @@ export function TodayScreen() {
   const { state: dailyState, loading: stateLoading } = useDailyState();
   const { settings } = useSettings();
   const [todayTasks, setTodayTasks] = useState<TodayTask[]>([]);
+  const [copySuccess, setCopySuccess] = useState(false);
+
+  const handleCopySummary = async () => {
+    if (!dailyState) return;
+
+    const summary = generateDailySummary(
+      todayTasks,
+      dailyState.completedTaskIds,
+      dailyState.earnedStickers
+    );
+
+    try {
+      await navigator.clipboard.writeText(summary);
+      setCopySuccess(true);
+      setTimeout(() => setCopySuccess(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy summary:', err);
+    }
+  };
 
   useEffect(() => {
     if (!roomsLoading && !tasksLoading && !stateLoading && dailyState) {
@@ -49,13 +98,21 @@ export function TodayScreen() {
     <div className="screen today-screen">
       <header className="today-header">
         <h1 className="today-date">
-          {new Date().toLocaleDateString('en-US', { 
-            weekday: 'long', 
-            month: 'long', 
-            day: 'numeric' 
+          {new Date().toLocaleDateString('en-US', {
+            weekday: 'long',
+            month: 'long',
+            day: 'numeric'
           })}
         </h1>
         <div className="today-command">{getTodayCommand(nextTask.title)}</div>
+        <Button
+          variant="tertiary"
+          size="sm"
+          onClick={handleCopySummary}
+          className="summary-button"
+        >
+          {copySuccess ? '✓ Copied!' : '📋 Copy Daily Summary'}
+        </Button>
       </header>
 
       <div className="today-list">

@@ -1,5 +1,4 @@
 import { Task, Room } from '@/types';
-import { getTodayISO } from './db';
 
 export interface TodayTask extends Task {
   room: Room;
@@ -13,7 +12,6 @@ export function generateTodayList(
 ): TodayTask[] {
   const today = new Date();
   const dayOfWeek = today.getDay();
-  const todayISO = getTodayISO();
   
   const eligibleTasks = tasks.filter((task) => {
     if (completedTaskIds.includes(task.id)) {

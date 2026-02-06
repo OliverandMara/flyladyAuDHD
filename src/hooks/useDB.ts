@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getDB, generateId, getTodayISO } from '@/lib/db';
-import type { Room, Task, Zone, DailyState, Settings } from '@/types';
+import type { Room, Task, DailyState, Settings } from '@/types';
 
 export function useRooms() {
   const [rooms, setRooms] = useState<Room[]>([]);
