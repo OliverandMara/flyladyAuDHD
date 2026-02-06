@@ -1,0 +1,17 @@
+.card {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  border: var(--border-width) solid var(--color-border);
+  border-left-width: 4px;
+}
+
+.card-elevated {
+  background: var(--color-surface-elevated);
+  box-shadow: var(--shadow-md);
+}
+
+.card:hover {
+  border-color: var(--color-border-focus);
+  transition: border-color var(--transition-fast);
+}

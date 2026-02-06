@@ -1,0 +1,31 @@
+.progress-ring {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-ring svg {
+  display: block;
+}
+
+.progress-ring-bg {
+  fill: none;
+  stroke: var(--beige-200);
+}
+
+.progress-ring-progress {
+  fill: none;
+  stroke: var(--brass-500);
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+.progress-ring-content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
