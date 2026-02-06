@@ -1,0 +1,129 @@
+.timer-screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+  text-align: center;
+}
+
+.timer-active {
+  background: linear-gradient(135deg, var(--beige-50) 0%, var(--steel-50) 100%);
+}
+
+.timer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xl);
+  width: 100%;
+  max-width: 400px;
+}
+
+.timer-display {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.timer-time {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+}
+
+.timer-task {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+}
+
+.timer-coaching {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  max-width: 400px;
+  text-align: center;
+  padding: var(--space-md);
+}
+
+.timer-controls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  width: 100%;
+}
+
+.celebration {
+  background: var(--color-success-bg);
+}
+
+.celebration-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.celebration h1 {
+  font-size: 80px;
+  margin: 0;
+}
+
+.celebration h2 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+}
+
+.celebration p {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+}
+
+.timer-start {
+  background: var(--color-background);
+}
+
+.timer-start-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.timer-task-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.timer-room-icon {
+  font-size: 64px;
+}
+
+.timer-task-title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+}
+
+.timer-room-name {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-lg);
+}
+
+.timer-duration {
+  color: var(--color-text-tertiary);
+  font-size: var(--font-size-base);
+}
+
+.timer-start-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  width: 100%;
+}
